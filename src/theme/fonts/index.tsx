@@ -1,4 +1,4 @@
-import { isIOS } from "../../utils/helper";
+import { isIOS } from "../../utils/";
 
 export default {
     Instagram: {
