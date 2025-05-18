@@ -1,2 +1,3 @@
 import {SCREENS} from "./screens.tsx";
-export {SCREENS};
+import {Strings} from "./strings.tsx";
+export {SCREENS , Strings};

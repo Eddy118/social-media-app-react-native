@@ -1,3 +1,5 @@
 export const SCREENS = {
-    HOME: "Home",
+    HOME: 'Home',
+    LOGIN: 'Login',
+    SIGNUP: 'Signup',
 } as const;

@@ -1,0 +1,48 @@
+import React, {useState} from 'react';
+import {
+    View,
+    Image
+} from 'react-native';
+import AppContainer from "../../../components/organisms/AppContainer";
+import Input from "../../../components/molecules/input";
+import Button from "../../../components/molecules/button";
+import Label from "../../../components/atoms/label";
+import {Images} from "../../../constants/images.tsx";
+import {SCREENS, Strings} from '../../../constants';
+import CommonStyles from  '../../../common/commonStyles'
+import GradientWrapper from "../../../components/organisms/GradientWrapper";
+import Styles from "../styles.tsx";
+import PressableContainer from "../../../components/organisms/PressableContainer";
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import {RootStackParamList} from "../../../types/navigation.tsx";
+
+type SignupProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+const Signup: React.FC<SignupProps> = ({ navigation }) => {
+
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
+
+    return (
+        <AppContainer>
+            <GradientWrapper>
+                <View style={Styles.container}>
+                    <Image source={Images.logo} style={Styles.logo}/>
+                    <Input style={Styles.textInput}  placeholder={Strings.email} value={email} onChangeText={(val) => setEmail(val)} />
+                    <Input style={Styles.textInput}  placeholder={Strings.password} value={password} secureTextEntry={true} onChangeText={(val) => setPassword(val)} icon={Images.showIcon} />
+                    <Input style={Styles.textInput}  placeholder={Strings.confirmPassword} value={confirmPassword} secureTextEntry={true} onChangeText={(val) => setConfirmPassword(val)} icon={Images.showIcon} />
+                    <Button  style={[CommonStyles.buttonContainer, CommonStyles.centerContainer]} textStyle={Styles.actionTextStyle} title={Strings.loginIn} onPress={() => {}} />
+                  <PressableContainer onPress={() => navigation.navigate(SCREENS.LOGIN)} >
+                      <View style={[CommonStyles.centerContainer,Styles.secondaryActionTextContainer]}>
+                          <Label style={Styles.secondaryActionLabel}  title={Strings.alreadyRegistered} />
+                          <Label style={Styles.secondaryActionBtnText} title={Strings.loginIn} />
+                      </View>
+                  </PressableContainer>
+                </View>
+            </GradientWrapper>
+        </AppContainer>
+    );
+};
+
+export default Signup;
