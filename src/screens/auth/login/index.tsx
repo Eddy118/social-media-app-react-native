@@ -31,14 +31,13 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
                     <Image source={Images.logo} style={Styles.logo}/>
                     <Input style={Styles.textInput}  placeholder={Strings.email} value={email} onChangeText={(val) => setEmail(val)} />
                     <Input style={Styles.textInput}  placeholder={Strings.password} value={password} secureTextEntry={true} onChangeText={(val) => setPassword(val)} icon={Images.showIcon} />
-                    <Button  style={[CommonStyles.buttonContainer, CommonStyles.centerContainer]} textStyle={Styles.actionTextStyle} title={Strings.loginIn} onPress={() => {}} />
+                    <Button   style={[CommonStyles.buttonContainer, CommonStyles.centerContainer]} textStyle={Styles.actionTextStyle} title={Strings.loginIn} onPress={() => navigation.navigate(SCREENS.HOME)} />
                     <PressableContainer onPress={() => navigation.navigate(SCREENS.SIGNUP)} >
-                      <View style={[CommonStyles.centerContainer,Styles.secondaryActionTextContainer]}>
+                        <View style={[CommonStyles.centerContainer,Styles.secondaryActionTextContainer]}>
                                   <Label style={Styles.secondaryActionLabel}  title={Strings.dontHaveAnAccount} />
                                   <Label style={Styles.secondaryActionBtnText} title={` ${Strings.register} `} />
-                      </View>
+                        </View>
                     </PressableContainer>
-
                 </View>
             </GradientWrapper>
         </AppContainer>
