@@ -7,7 +7,7 @@ import AppContainer from "../../../components/organisms/AppContainer";
 import Input from "../../../components/molecules/input";
 import Button from "../../../components/molecules/button";
 import Label from "../../../components/atoms/label";
-import {Images} from "../../../constants/images.tsx";
+import {Images} from "../../../constants";
 import {SCREENS, Strings} from '../../../constants';
 import CommonStyles from  '../../../common/commonStyles'
 import GradientWrapper from "../../../components/organisms/GradientWrapper";

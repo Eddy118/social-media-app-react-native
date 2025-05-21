@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import AppContainer from "../../components/organisms/AppContainer";
 import Header from "../../components/molecules/header";
 import {colors} from "../../theme/colors";
@@ -10,13 +10,13 @@ import {getPostsListing} from '../../services/posts.service';
 import {fetchPosts} from '../../store/social-posts.slice'
 import {useAppDispatch, useAppSelector} from "../../store/hooks";
 
+const pageSize = 10;
+
 const Home = () => {
 
     const [page, setPage ] = useState<number>(1);
-    const [pageSize, setPageSize ] = useState<number>(10);
 
     const dispatch = useAppDispatch();
-
     const [refreshing , setRefreshing] = useState(false);
 
     const posts = useAppSelector(state => state.socials.socialPosts);
@@ -43,7 +43,7 @@ const Home = () => {
 
     return (
         <AppContainer>
-            <View style={{flex : 1, backgroundColor : colors.primary}}>
+            <View style={Styles.container}>
             <GradientWrapper>
                 <Header showBack={false} title={'Home'}/>
             </GradientWrapper>
@@ -52,5 +52,11 @@ const Home = () => {
             </View>
         </AppContainer>
     );
-}
+};
+
+const Styles = StyleSheet.create({
+    container: {
+        flex : 1, backgroundColor : colors.primary
+    }
+})
 export default Home;

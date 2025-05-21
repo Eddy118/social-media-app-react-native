@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity, StyleSheet} from "react-native";
-import {Images} from "../../../constants/images.tsx";
+import {Images, SCREENS} from "../../../constants";
 import {hp, wp} from "../../../utils";
 import {colors} from "../../../theme/colors";
 import {useNavigation} from "@react-navigation/native";
@@ -12,13 +12,15 @@ interface HeaderProps {
     showBack?: boolean;
     showLogo?: boolean;
     showProfile?: boolean;
+    onChangeText ?: (text: string) => void;
 }
-const Header = ({title, showBack = false, showProfile = true} : HeaderProps) => {
+
+const Header = ({ showBack = false, showProfile = true, onChangeText} : HeaderProps) => {
     const navigation = useNavigation();
     return (
         <View style={Styles.container}>
-            {showBack ? <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.backArrow} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity> :  <Image source={Images.logo} tintColor={colors.white} style={{width : wp(10), resizeMode : 'contain'}}/>}
-            <SearchInput style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={''} onChangeText={() => {}} />
+            {showBack ? <TouchableOpacity style={Styles.backIcon} onPress={() => navigation.goBack()}><Image  source={Images.backArrow} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity> :  <Image source={Images.appLogo} style={{width : wp(10) , resizeMode : 'contain'}}/>}
+            <SearchInput  onFocus={() => navigation.navigate(SCREENS.SEARCH)}  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={''} onChangeText={onChangeText} />
             {showProfile && <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.logo
             } tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity>}
         </View>
@@ -31,6 +33,10 @@ const Styles = StyleSheet.create({
     },
     backImg : {
         width : wp(10),
+        resizeMode : 'contain'
+    },
+    backIcon : {
+        width : wp(8),
         resizeMode : 'contain'
     }
 })

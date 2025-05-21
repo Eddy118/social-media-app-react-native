@@ -20,14 +20,12 @@ type CustomListingContainerProps = {
 const CustomListing = ({posts, onRefresh, refreshing = false, onReachEnd} : CustomListingContainerProps) => {
     const renderListItem = useCallback((post : Post) => {
         return(
-            <View>
                 <PostWrapper
                     profile ={<PostProfile name={post.influencer_name}/>}
                     actions ={<PostAction likeCount={post.likes_count} commentCount={post.comments.length} />}
                 >
                     <PostListItem post={post} />
                 </PostWrapper>
-            </View>
         );
     }, []);
 

@@ -5,6 +5,7 @@ import Video from 'react-native-video';
 type VideoTypePostProps = {
     url : string
 }
+
 const VideoTypePost = ({url} : VideoTypePostProps) => {
     return(
             <Video
@@ -14,6 +15,7 @@ const VideoTypePost = ({url} : VideoTypePostProps) => {
                 paused={false}
                 onError={(e) => console.log('Video error', e)}
                 onLoadStart={() => console.log('Loading video')}
+                repeat={true}
                 onLoad={() => console.log('Video loaded')}
                 onBuffer={(e) => console.log('Buffering', e)}
             />

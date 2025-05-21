@@ -1,6 +1,6 @@
 import apiClient from "../api/apiClient";
 import {genericError} from '../constants';
-import {Posts} from "../shared/type/commonTypes.ts";
+import {Post} from "../shared/type/commonTypes.ts";
 
 type getPostsListingProps = {
     page: number;
@@ -10,10 +10,10 @@ type getPostsListingProps = {
 export const getPostsListing = async ({
                                           page,
                                           pageSize,
-                                      }: getPostsListingProps) : Promise<Posts[]> => {
+                                      }: getPostsListingProps) : Promise<Post[]> => {
     try {
-        const response  = await apiClient.get<{ data: Posts[] }>(`posts?page=${page}&limit=${pageSize}`);
-        return response.data as unknown as Posts[];
+        const response  = await apiClient.get<{ data: Post[] }>(`posts`);
+        return response.data as unknown as Post[];
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
         console.error("Error fetching posts:", errorMsg);
@@ -21,10 +21,14 @@ export const getPostsListing = async ({
     }
 };
 
-export const getPokemonDetails = async (name: string) => {
+export const getTrendingTags = async () : Promise<string[] | undefined> => {
     try {
-        const { data } = await apiClient.get(`pokemon/${name}`);
-        return data;
+        const {data }  = await apiClient.get<Post[]>(`posts`);
+        const Tags  : string[]  = []
+          data.map((post: Post) => {
+            post.hashtags.map((hashtag: string) => Tags.push(hashtag));
+        })
+        return Tags as unknown as Array<string>;
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
         // showErrorToast({ message: errorMsg });

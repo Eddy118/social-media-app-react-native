@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {Image, ImageSourcePropType, StyleProp,TextStyle, StyleSheet, TextInput, View} from "react-native";
 import { colors } from "../../../theme/colors";
 import CommonStyles from "../../../common/commonStyles";
@@ -14,13 +14,17 @@ interface searchInputType {
     style?: StyleProp<TextStyle>,
     error?: string,
     icon?: ImageSourcePropType,
+    onFocus?: () => void,
 }
 
-const SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon } : searchInputType) => {
+const SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon , onFocus} : searchInputType) => {
+
+    const inputRef = useRef<TextInput>(null);
 
     return (
         <View style={CommonStyles.centerContainer}>
             <TextInput
+                ref={inputRef}
                 style={[ styles.Input, style, fullWidth ? { width: '100%' } : null ]}
                 value={value}
                 keyboardType={numeric ? 'numeric' : 'default'}
@@ -28,6 +32,10 @@ const SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeh
                 placeholder={placeholder}
                 onChangeText={onChangeText}
                 placeholderTextColor={colors.gray}
+                onFocus={() => {
+                    if (onFocus) onFocus();
+                    if (inputRef.current?.blur) inputRef.current.blur();
+                }}
             />
             {icon && <Image source={icon} style={styles.icon} />}
         </View>

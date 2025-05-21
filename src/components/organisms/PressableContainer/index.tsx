@@ -7,7 +7,7 @@ interface  PressableContainerProps {
 }
 const PressableContainer = ({ children , onPress}: PressableContainerProps) => {
     return (
-        <Pressable  onPress={() => onPress()}>
+        <Pressable onPress={() => onPress()}>
             {children}
         </Pressable>
     )

@@ -16,7 +16,7 @@ import PressableContainer from "../../../components/organisms/PressableContainer
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import {RootStackParamList} from "../../../types/navigation.tsx";
 
-type SignupProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
+type SignupProps = NativeStackScreenProps<RootStackParamList, 'Signup'>;
 
 const Signup: React.FC<SignupProps> = ({ navigation }) => {
 

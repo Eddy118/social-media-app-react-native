@@ -8,5 +8,7 @@ const Images = {
     heartLiked: require('../assets/images/heart-liked.png'),
     heart: require('../assets/images/heart-default.png'),
     comment: require('../assets/images/comment.png'),
+    appLogo: require('../assets/images/App_logo.png'),
+    close: require('../assets/images/close.png'),
 }
 export  {Images};
