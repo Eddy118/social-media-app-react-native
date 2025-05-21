@@ -8,10 +8,10 @@ const socialPosts = createSlice({
     name: 'pokemon',
     initialState,
     reducers: {
-        updatePokemonList: (state, action) => {
+        fetchPosts: (state, action) => {
             state.socialPosts = action.payload },
     },
 });
 
-export const { updatePokemonList } = socialPosts.actions;
+export const { fetchPosts } = socialPosts.actions;
 export default socialPosts.reducer;

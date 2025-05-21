@@ -1,4 +1,4 @@
-import {Pressable, StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle} from "react-native";
+import { StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle} from "react-native";
 
 interface ButtonProps {
     onPress: () => void;

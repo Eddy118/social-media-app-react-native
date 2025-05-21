@@ -18,7 +18,7 @@ const Header = ({title, showBack = false, showProfile = true} : HeaderProps) => 
     return (
         <View style={Styles.container}>
             {showBack ? <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.backArrow} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity> :  <Image source={Images.logo} tintColor={colors.white} style={{width : wp(10), resizeMode : 'contain'}}/>}
-            <SearchInput style={[Styles.backImg, {backgroundColor : colors.gray}]} placeholder={Strings.SearchPost} value={''} onChangeText={() => {}} />
+            <SearchInput style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={''} onChangeText={() => {}} />
             {showProfile && <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.logo
             } tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity>}
         </View>

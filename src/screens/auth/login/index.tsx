@@ -26,7 +26,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
 
     return (
         <AppContainer>
-            <GradientWrapper>
+            <GradientWrapper style={{flex : 1}}>
                 <View style={[Styles.container]}>
                     <Image source={Images.logo} style={Styles.logo}/>
                     <Input style={Styles.textInput}  placeholder={Strings.email} value={email} onChangeText={(val) => setEmail(val)} />

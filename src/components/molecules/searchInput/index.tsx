@@ -16,7 +16,7 @@ interface searchInputType {
     icon?: ImageSourcePropType,
 }
 
-const  SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon } : searchInputType) => {
+const SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon } : searchInputType) => {
 
     return (
         <View style={CommonStyles.centerContainer}>
@@ -27,7 +27,7 @@ const  SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, place
                 secureTextEntry={secureTextEntry || false }
                 placeholder={placeholder}
                 onChangeText={onChangeText}
-                placeholderTextColor={colors.black}
+                placeholderTextColor={colors.gray}
             />
             {icon && <Image source={icon} style={styles.icon} />}
         </View>
@@ -36,7 +36,6 @@ const  SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, place
 
 const styles = StyleSheet.create({
     Input: {
-        borderWidth: 1,
         borderRadius: 10,
         paddingVertical: 5,
         minWidth : wp(70),

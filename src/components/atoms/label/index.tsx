@@ -1,7 +1,7 @@
 import {StyleProp, Text, TextStyle} from 'react-native';
 
 interface  LabelProps {
-    title: string;
+    title: string | number;
     style?: StyleProp<TextStyle>;
 }
 

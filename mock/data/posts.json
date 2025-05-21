@@ -1,0 +1,82 @@
+{
+  "posts" : [
+    {
+      "influencer_id": "inf_001",
+      "influencer_name": "Ava Lifestyle",
+      "post_content": "https://cdn.i-scmp.com/sites/default/files/styles/1020x680/public/d8/images/canvas/2024/11/19/edcda8de-802f-4da8-a60b-f68defbd0f38_100d6586.jpg?itok=PDZxbunU&v=1732009009",
+      "post_type": "image",
+      "created_at": "2025-05-21T10:30:00Z",
+      "hashtags": ["#fitness", "#morningworkout", "#goals"],
+      "likes_count": 1290,
+      "comments": [
+        { "user": "fit_fan92", "text": "You're such an inspiration!" },
+        { "user": "gymrat21", "text": "Love the energy 🔥" }
+      ]
+    },
+    {
+      "influencer_id": "inf_002",
+      "influencer_name": "Chef Marco",
+      "post_content": "https://assets.mixkit.co/videos/4672/4672-720.mp4",
+      "post_type": "video",
+      "created_at": "2025-05-20T15:10:00Z",
+      "hashtags": ["#italianfood", "#homecooking", "#chefmarco"],
+      "likes_count": 2215,
+      "comments": [
+        { "user": "foodiegal", "text": "I’m drooling already 😋" },
+        { "user": "homemadehero", "text": "Tried it — amazing recipe!" }
+      ]
+    },
+    {
+      "influencer_id": "inf_003",
+      "influencer_name": "TechWithLena",
+      "post_content": "Just got hands on the AI Laptop 15X — review drops tomorrow!",
+      "post_type": "text",
+      "created_at": "2025-05-19T08:00:00Z",
+      "hashtags": ["#techreview", "#ai", "#gadgets"],
+      "likes_count": 884,
+      "comments": [
+        { "user": "nerdysteve", "text": "Can't wait! 🙌" },
+        { "user": "dev_dani", "text": "Hope it's M1 fast!" }
+      ]
+    },
+    {
+      "influencer_id": "inf_001",
+      "influencer_name": "Ava Lifestyle",
+      "post_content": "Pushing limits every day 💪",
+      "post_type": "text",
+      "created_at": "2025-05-18T11:40:00Z",
+      "hashtags": ["#grindmode", "#wellness", "#avafit"],
+      "likes_count": 603,
+      "comments": [
+        { "user": "zenzone", "text": "You motivate me daily!" }
+      ]
+    },
+    {
+      "influencer_id": "inf_002",
+      "influencer_name": "Chef Marco",
+      "post_content": "https://images.pexels.com/photos/4164769/pexels-photo-4164769.jpeg",
+      "post_type": "image",
+      "created_at": "2025-05-17T17:20:00Z",
+      "hashtags": ["#dessertlover", "#bakingjoy", "#chefmarco"],
+      "likes_count": 1947,
+      "comments": [
+        { "user": "sweetbite", "text": "I need this recipe!! 🍫" },
+        { "user": "pastryqueen", "text": "Looks divine 👌" }
+      ]
+    },
+    {
+      "influencer_id": "inf_003",
+      "influencer_name": "TechWithLena",
+      "post_content": "https://assets.mixkit.co/videos/4915/4915-720.mp4",
+      "post_type": "video",
+      "created_at": "2025-05-16T13:25:00Z",
+      "hashtags": ["#unboxing", "#droidx", "#techlovers"],
+      "likes_count": 1467,
+      "comments": [
+        { "user": "droidfan", "text": "That intro was slick!" },
+        { "user": "techtok", "text": "Subscribed! Want more 😍" }
+      ]
+    }
+  ]
+
+}

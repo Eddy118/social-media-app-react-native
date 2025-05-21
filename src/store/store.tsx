@@ -3,7 +3,7 @@ import socialPostsReducer from '../store/social-posts.slice';
 
 export const store = configureStore({
     reducer: {
-        pokemon: socialPostsReducer,
+        socials: socialPostsReducer,
     },
 });
 

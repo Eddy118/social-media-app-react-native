@@ -7,7 +7,7 @@ import AppContainer from "../../../components/organisms/AppContainer";
 import Input from "../../../components/molecules/input";
 import Button from "../../../components/molecules/button";
 import Label from "../../../components/atoms/label";
-import {Images} from "../../../constants/images.tsx";
+import {Images} from "../../../constants";
 import {SCREENS, Strings} from '../../../constants';
 import CommonStyles from  '../../../common/commonStyles'
 import GradientWrapper from "../../../components/organisms/GradientWrapper";
@@ -26,7 +26,7 @@ const Signup: React.FC<SignupProps> = ({ navigation }) => {
 
     return (
         <AppContainer>
-            <GradientWrapper>
+            <GradientWrapper style={{flex : 1}}>
                 <View style={Styles.container}>
                     <Image source={Images.logo} style={Styles.logo}/>
                     <Input style={Styles.textInput}  placeholder={Strings.email} value={email} onChangeText={(val) => setEmail(val)} />
