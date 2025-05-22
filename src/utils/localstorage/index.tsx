@@ -14,8 +14,7 @@ export async function getItemByKey(key: string) {
         const jsonValue = await AsyncStorage.getItem(key);
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
-        console.log('e', e);
-        return null;
+        return;
     }
 }
 

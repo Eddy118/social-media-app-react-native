@@ -20,9 +20,9 @@ const Header = ({ showBack = false, showProfile = true, onChangeText} : HeaderPr
     return (
         <View style={Styles.container}>
             {showBack ? <TouchableOpacity style={Styles.backIcon} onPress={() => navigation.goBack()}><Image  source={Images.backArrow} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity> :  <Image source={Images.appLogo} style={{width : wp(10) , resizeMode : 'contain'}}/>}
-            <SearchInput  onFocus={() => navigation.navigate(SCREENS.SEARCH)}  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={''} onChangeText={onChangeText} />
-            {showProfile && <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.logo
-            } tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity>}
+            <SearchInput onFocus={() => navigation.navigate(SCREENS.SEARCH)}  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.searchPost} value={''} onChangeText={(val) => onChangeText && onChangeText(val)} />
+            {showProfile && <TouchableOpacity style={Styles.backImg} onPress={() => navigation.goBack()}><Image  source={Images.user
+            } style={Styles.backImg}/></TouchableOpacity>}
         </View>
     );
 }

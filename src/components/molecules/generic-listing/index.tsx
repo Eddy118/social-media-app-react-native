@@ -4,7 +4,6 @@ import {JSX} from "react";
 import {hp, wp} from "../../../utils";
 
 import {colors} from "../../../theme/colors";
-import ContentSeparator from "../../atoms/content-separator";
 
 type GenericListingProps<T> = {
     renderComponent : (item: T) => JSX.Element,

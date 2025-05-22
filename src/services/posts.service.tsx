@@ -35,13 +35,35 @@ export const getTrendingTags = async () : Promise<string[] | undefined> => {
     }
 };
 
-export const getSelectedPokemonDetails = async (url: string) => {
+export const getSearchedPost = async (searchText: string) => {
     try {
-        const speciesUrl = url?.split("v2")[1];
-        const { data } = await apiClient.get(speciesUrl);
-        return data;
+        const {data} = await apiClient.get<Post[]>(`posts`);
+        const results: Post[] = []
+        data.map((post: Post) => {
+            const isMatched = post.hashtags.some((hashtag: string) => hashtag.includes(searchText))
+            if (post.influencer_name.includes(searchText) || isMatched) {
+                results.push(post);
+            }
+        });
+        return results;
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
         // showErrorToast({ message: errorMsg });
     }
+
+}
+    export const getMatchingPosts = async (searchText: string) => {
+        try {
+            const {data }  = await apiClient.get<Post[]>(`posts`);
+            const results : string[] = []
+            data.map((post: Post) => {
+                if (post.influencer_name.includes(searchText)) {
+                    results.push(post.influencer_name) ;
+                }
+            });
+            return results;
+        } catch (err: any) {
+            const errorMsg = err?.message ?? genericError;
+            // showErrorToast({ message: errorMsg });
+        }
 };

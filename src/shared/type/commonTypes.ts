@@ -14,4 +14,14 @@ type Post = {
     "comments": Array<Comments>
 }
 
-export type {Post , Comments}
+type User = {
+    id: string;
+    profileImage: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    avatar: string;
+}
+
+export type {Post , Comments, User}

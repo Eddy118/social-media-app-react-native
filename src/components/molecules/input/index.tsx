@@ -2,6 +2,7 @@ import React from "react";
 import {Image, ImageSourcePropType, StyleProp,TextStyle, StyleSheet, TextInput, View} from "react-native";
 import { colors } from "../../../theme/colors";
 import CommonStyles from "../../../common/commonStyles";
+import PressableContainer from "../../organisms/PressableContainer";
 
 interface inputType {
     numeric?: string,
@@ -13,9 +14,10 @@ interface inputType {
     style?: StyleProp<TextStyle>,
     error?: string,
     icon?: ImageSourcePropType,
+    onIconPress?: () => void,
 }
 
-const  Input = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon } : inputType) => {
+const  Input = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder, onChangeText,error, icon, onIconPress } : inputType) => {
 
     return (
         <View style={CommonStyles.centerContainer}>
@@ -28,7 +30,7 @@ const  Input = ({ style, fullWidth, numeric, value, secureTextEntry, placeholder
                     onChangeText={onChangeText}
                     placeholderTextColor={colors.black}
                 />
-                {icon && <Image source={icon} style={styles.icon} />}
+            {icon && <PressableContainer style={styles.iconContainer}  onPress={() => onIconPress && onIconPress()}><Image source={icon} style={styles.icon} /></PressableContainer>}
             </View>
     )
 }
@@ -42,6 +44,11 @@ const styles = StyleSheet.create({
         minWidth : 300,
         paddingLeft : 20,
         height : 40
+    },
+    iconContainer : {
+        position: 'absolute',
+        bottom: 0,
+        right: 0
     },
     icon : {
         width : 20 ,

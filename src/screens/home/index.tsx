@@ -20,7 +20,6 @@ const Home = () => {
     const [refreshing , setRefreshing] = useState(false);
 
     const posts = useAppSelector(state => state.socials.socialPosts);
-
     const getPosts = useCallback(async () => {
         const newPosts  = await  getPostsListing({page , pageSize});
        if(page === 1){

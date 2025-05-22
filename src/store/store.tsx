@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import socialPostsReducer from '../store/social-posts.slice';
+import socialPostsReducer from './social-posts.slice';
+import UserDetailsReducer from './user.slice'
 
 export const store = configureStore({
     reducer: {
         socials: socialPostsReducer,
+        userDetails : UserDetailsReducer
     },
 });
 

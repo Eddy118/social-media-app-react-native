@@ -4,7 +4,7 @@ import {Post} from "../../../shared/type/commonTypes.ts";
 
 type CustomListingContainerProps = {
     posts : Post[],
-    onRefresh : () => void,
+    onRefresh?: () => void,
     refreshing?: boolean,
     onReachEnd: () => void
 }
@@ -12,7 +12,7 @@ type CustomListingContainerProps = {
 const CustomListingContainer = ({posts , onRefresh, refreshing, onReachEnd} :CustomListingContainerProps ) => {
     return (
         <View style={{flex : 1}}>
-            <CustomListing onReachEnd={onReachEnd} refreshing={refreshing} onRefresh={() => onRefresh()} posts={posts} />
+            <CustomListing onReachEnd={onReachEnd} refreshing={refreshing} onRefresh={() => onRefresh && onRefresh()} posts={posts} />
         </View>
     );
 }

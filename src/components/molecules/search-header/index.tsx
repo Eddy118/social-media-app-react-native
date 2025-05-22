@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity, StyleSheet} from "react-native";
-import {Images, SCREENS} from "../../../constants";
+import {Images} from "../../../constants";
 import {hp, wp} from "../../../utils";
 import {colors} from "../../../theme/colors";
 import {useNavigation} from "@react-navigation/native";
@@ -13,15 +13,17 @@ interface SearchHeaderProps {
     showLogo?: boolean;
     showProfile?: boolean;
     onChangeText: (value: string) => void;
+    value?: string,
+    setValue?: (value: string) => void;
 }
 
-const SearchHeader = ({ onChangeText} : SearchHeaderProps) => {
+const SearchHeader = ({ onChangeText, value , setValue} : SearchHeaderProps) => {
 
     const navigation = useNavigation();
 
     return (
         <View style={Styles.container}>
-            <SearchInput style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={''} onChangeText={onChangeText} />
+            <SearchInput  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={value || ""} onChangeText={(val) => setValue && setValue(val)} />
          <TouchableOpacity style={Styles.backIcon} onPress={() => navigation.goBack()}><Image  source={Images.close} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity>
         </View>
     );

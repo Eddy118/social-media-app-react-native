@@ -10,5 +10,6 @@ const Images = {
     comment: require('../assets/images/comment.png'),
     appLogo: require('../assets/images/App_logo.png'),
     close: require('../assets/images/close.png'),
+    user: require('../assets/images/user_1.png'),
 }
 export  {Images};

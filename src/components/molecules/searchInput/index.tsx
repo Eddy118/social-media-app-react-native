@@ -33,8 +33,11 @@ const SearchInput = ({ style, fullWidth, numeric, value, secureTextEntry, placeh
                 onChangeText={onChangeText}
                 placeholderTextColor={colors.gray}
                 onFocus={() => {
-                    if (onFocus) onFocus();
-                    if (inputRef.current?.blur) inputRef.current.blur();
+                    if (onFocus) {
+                        onFocus()
+                        inputRef.current?.blur && inputRef.current.blur();
+                    };
+
                 }}
             />
             {icon && <Image source={icon} style={styles.icon} />}

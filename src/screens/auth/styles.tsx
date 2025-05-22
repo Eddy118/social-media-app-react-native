@@ -9,7 +9,7 @@ const Styles = StyleSheet.create({
         flex : 1, justifyContent : 'center', alignItems : 'center'
     },
     logo : {
-        width : wp(20), height : hp(20), resizeMode : 'contain'
+        width : wp(30), height : hp(30), resizeMode : 'contain'
     },
     textInput: {
         fontSize : RF(12), fontFamily : Fonts.Instagram.regular,

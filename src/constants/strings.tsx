@@ -7,5 +7,6 @@ export const Strings = {
     confirmPassword : "Confirm Password",
     signUp : 'Sign Up',
     alreadyRegistered: 'Already have an Account?',
-    SearchPost: 'Search Posts',
+    searchPost: 'Search Posts',
+    name: "Name"
 }

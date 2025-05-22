@@ -5,6 +5,8 @@ import Home from '../screens/home';
 import Login from '../screens/auth/login';
 import Signup from "../screens/auth/signup";
 import Search from "../screens/search";
+import SearchResults from "../screens/search-results";
+import Splash from "../screens/splash";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,15 +18,17 @@ const MainNavigation = () => {
                     headerShown: false,
                 }}
             >
+                <Stack.Screen name={SCREENS.SPLASH} component={Splash} />
                 <Stack.Screen name={SCREENS.LOGIN} component={Login} />
                 <Stack.Screen name={SCREENS.SIGNUP} component={Signup} />
                 <Stack.Screen name={SCREENS.HOME} component={Home} />
+                <Stack.Screen name={SCREENS.SEARCH_RESULTS} component={SearchResults} />
                 <Stack.Screen
                     name={SCREENS.SEARCH}
                     component={Search}
                     options={{
-                        presentation: 'modal', // shows as a modal
-                        animation: 'slide_from_bottom', // other options: 'fade', 'slide_from_right'
+                        presentation: 'modal',
+                        animation: 'slide_from_bottom',
                     }} />
             </Stack.Navigator>
         </NavigationContainer>
