@@ -22,6 +22,7 @@ const Home = () => {
     const posts = useAppSelector(state => state.socials.socialPosts);
     const getPosts = useCallback(async () => {
         const newPosts  = await  getPostsListing({page , pageSize});
+
        if(page === 1){
            dispatch(fetchPosts(newPosts))
        } else  {
@@ -39,6 +40,7 @@ const Home = () => {
         setRefreshing(true);
         setPage(1)
     }, []);
+
 
     return (
         <AppContainer>

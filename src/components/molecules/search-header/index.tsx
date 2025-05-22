@@ -23,7 +23,7 @@ const SearchHeader = ({ onChangeText, value , setValue} : SearchHeaderProps) => 
 
     return (
         <View style={Styles.container}>
-            <SearchInput  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.SearchPost} value={value || ""} onChangeText={(val) => setValue && setValue(val)} />
+            <SearchInput  style={[Styles.backImg, {backgroundColor : colors.white}]} placeholder={Strings.searchPost} value={value || ""} onChangeText={(val) => setValue && setValue(val)} />
          <TouchableOpacity style={Styles.backIcon} onPress={() => navigation.goBack()}><Image  source={Images.close} tintColor={colors.white} style={Styles.backImg}/></TouchableOpacity>
         </View>
     );

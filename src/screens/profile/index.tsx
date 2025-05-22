@@ -102,7 +102,7 @@ const Profile: React.FC<ProfileScreenProps> = ({navigation}) => {
             />
 
             <GradientWrapper>
-                <Header />
+                <Header showBack={true} />
             </GradientWrapper>
         <View style={Styles.optionsContainer}>
             {profileOptions?.map((option, index) => renderProfileOptions({title : option.title, image : option.icon , onPress: option.onPress}))}
