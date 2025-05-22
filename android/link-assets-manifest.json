@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/InstagramSans.ttf",
+      "sha1": "8ec84821639693fc7c8162b2620e89834ca202ef"
+    },
+    {
+      "path": "src/assets/fonts/InstagramSansBold.ttf",
+      "sha1": "4d2bd90f81f9df28b3be0388c5648f9886d0e166"
+    },
+    {
+      "path": "src/assets/fonts/InstagramSansHeadline.otf",
+      "sha1": "cae5b074fca23d1a7cb1789eec5dfae30c0344af"
+    },
+    {
+      "path": "src/assets/fonts/InstagramSansLight.ttf",
+      "sha1": "fec660ad10b606d8afdabf4a32264f21a0d32c60"
+    },
+    {
+      "path": "src/assets/fonts/InstagramSansMedium.ttf",
+      "sha1": "38d543317403bd35201e5df99df986c8f7d2e59d"
+    }
+  ]
+}

@@ -59,6 +59,7 @@ social-media-app-react-native/
 - **Lottie** animations
 - **FlashList** for performant lists
 - **JSON Server** for mock API
+- **Husky** Git hooks to enforce code quality and pre-commit checks.
 - **AsyncStorage**, **ToastMessage**, **Responsive UI**, and more
 
 ---
