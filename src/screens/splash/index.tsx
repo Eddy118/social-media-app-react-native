@@ -8,12 +8,11 @@ import {getItemByKey, wp} from "../../utils";
 import {USER_DETAILS} from "../../constants/asyncStorageKeys.tsx";
 
 const SplashScreen = () => {
-
     const initialRender = async () => {
         const user = await getItemByKey(USER_DETAILS);
         setTimeout(() => {
             const screen = user ? SCREENS.HOME : SCREENS.LOGIN
-            navigation.dispatch(StackActions.replace(SCREENS.HOME));
+            navigation.dispatch(StackActions.replace(screen));
         }, 4500);
     }
     const navigation = useNavigation();

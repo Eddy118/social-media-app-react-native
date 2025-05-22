@@ -16,12 +16,11 @@ type Post = {
 
 type User = {
     id: string;
-    profileImage: string;
-    firstName: string;
-    lastName: string;
+    profileImage?: string;
+    name: string;
     email: string;
     password: string;
-    avatar: string;
+    avatar?: string;
 }
 
 export type {Post , Comments, User}

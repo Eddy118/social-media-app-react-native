@@ -18,9 +18,9 @@ export async function getItemByKey(key: string) {
     }
 }
 
-export function removeItemByKey(key: string) {
+export async function removeItemByKey(key: string) {
     try {
-        AsyncStorage.removeItem(key);
+        return await AsyncStorage.removeItem(key);
     } catch (e) {
         console.log('e', e);
     }

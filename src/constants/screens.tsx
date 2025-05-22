@@ -4,5 +4,6 @@ export const SCREENS = {
     SIGNUP: 'Signup',
     SEARCH: 'Search',
     SEARCH_RESULTS: 'SearchResults',
-    SPLASH: 'Splash'
+    SPLASH: 'Splash',
+    PROFILE: 'Profile'
 } as const;
