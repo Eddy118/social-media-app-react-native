@@ -1,7 +1,6 @@
 import {StyleSheet, View, Image} from "react-native";
 import {wp} from "../../../utils";
 
-
 type ImageTypePostProps = {
     url : string
 }

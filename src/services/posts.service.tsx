@@ -1,6 +1,7 @@
 import apiClient from "../api/apiClient";
 import {genericError} from '../constants';
 import {Post} from "../shared/type/commonTypes.ts";
+import {showErrorToast} from "../utils/helper";
 
 type getPostsListingProps = {
     page: number;
@@ -16,6 +17,7 @@ export const getPostsListing = async ({
         return response.data as unknown as Post[];
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
+        showErrorToast({message : errorMsg})
         console.error("Error fetching posts:", errorMsg);
         return []; // return an empty array or throw the error depending on your use case
     }
@@ -31,7 +33,7 @@ export const getTrendingTags = async () : Promise<string[] | undefined> => {
         return Tags as unknown as Array<string>;
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
-        // showErrorToast({ message: errorMsg });
+        showErrorToast({ message: errorMsg });
     }
 };
 
@@ -48,7 +50,7 @@ export const getSearchedPost = async (searchText: string) => {
         return results;
     } catch (err: any) {
         const errorMsg = err?.message ?? genericError;
-        // showErrorToast({ message: errorMsg });
+        showErrorToast({ message: errorMsg });
     }
 
 }
