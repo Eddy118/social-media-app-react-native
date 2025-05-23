@@ -16,6 +16,7 @@ A fully-featured **React Native social media application** built using TypeScrip
 - 🧪 Unit testing with Jest
 - 📦 Modular and scalable architecture
 - 📡 JSON Server used for mock posts data
+- ✅ Context API for Theme Switching
 
 ---
 

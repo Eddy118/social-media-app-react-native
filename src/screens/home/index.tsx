@@ -1,18 +1,20 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Alert} from 'react-native';
 import AppContainer from "../../components/organisms/AppContainer";
 import Header from "../../components/molecules/header";
-import {colors} from "../../theme/colors";
 import ContentSeparator from "../../components/atoms/content-separator";
 import CustomListingContainer from "../../components/organisms/CustomListingContainer";
 import GradientWrapper from "../../components/organisms/GradientWrapper";
 import {getPostsListing} from '../../services/posts.service';
 import {fetchPosts} from '../../store/social-posts.slice'
 import {useAppDispatch, useAppSelector} from "../../store/hooks";
+import {useTheme} from "../../theme/app-theme/theme-hook.tsx";
 
 const pageSize = 10;
 
 const Home = () => {
+
+    const { theme, toggleTheme } = useTheme();
 
     const [page, setPage ] = useState<number>(1);
 
@@ -44,7 +46,7 @@ const Home = () => {
 
     return (
         <AppContainer>
-            <View style={Styles.container}>
+            <View style={[Styles.container, {backgroundColor: theme.background}]}>
             <GradientWrapper>
                 <Header showBack={false} title={'Home'}/>
             </GradientWrapper>
@@ -57,7 +59,7 @@ const Home = () => {
 
 const Styles = StyleSheet.create({
     container: {
-        flex : 1, backgroundColor : colors.primary
+        flex : 1,
     }
 })
 export default Home;
